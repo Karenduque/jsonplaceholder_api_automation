@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Niikiis Profiler Suite - QA environment" verbose="1" parallel="classes" configfailurepolicy="continue">
+    <!-- Default Groups for manual runs, you can use mvn params -Dgroups= -DexcludedGroups= in the cli command. -->
+    <groups>
+        <run>
+            <include name="SMOKE" />
+            <exclude name="TRANSLATIONS" />
+            <exclude name="REGRESSION" />
+            <exclude name="SECURITY" />
+        </run>
+    </groups>
+    <parameter name="BaseURL" value="https://n771ondlw0.execute-api.eu-west-1.amazonaws.com" />
+    <parameter name="LoginURL" value="https://n771ondlw0.execute-api.eu-west-1.amazonaws.com" />
+    <parameter name="authHeader" value="" />
+     <parameter name="API_version" value="Prod" />
+     <parameter name="languageId" value="" />
+     <parameter name="clientId" value="" />
+     <test name="Client Tests" parallel="methods">
+         <packages>
+             <package name="com.niikiis_api_automation.NiikiisAPItesting.tests.performanceManagment.*" />
+         </packages>
+     </test>
+ </suite>

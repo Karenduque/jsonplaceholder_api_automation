@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Useful Examples Tests" verbose="1" parallel="classes" configfailurepolicy="continue">
+    <groups>
+        <run>
+            <include name="EXAMPLE" />
+        </run>
+    </groups>
+    <test name="Examples Tests Package">
+        <packages>
+            <package name="com.morningstar.PPGintAPItesting.tests.examples.*" />
+        </packages>
+    </test>
+</suite>

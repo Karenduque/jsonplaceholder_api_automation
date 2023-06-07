@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Json Place Holder Suite - QA environment" verbose="1" configfailurepolicy="continue">
+    <!-- Default Groups for manual runs, you can use mvn params -Dgroups= -DexcludedGroups= in the cli command. -->
+    <groups>
+        <run>
+            <include name="SMOKE" />
+        </run>
+    </groups>
+    <parameter name="BaseURL" value="https://jsonplaceholder.typicode.com/posts" />
+    <parameter name="API_version" value="" />
+
+    <test name="Guide Test" parallel="methods">
+        <parameter name="resourceId" value="1" />
+        <parameter name="title" value="foo" />
+        <parameter name="body" value="bar" />
+        <parameter name="userId" value="1" />
+        <packages>
+            <package name="com.jsonplaceholder.APItesting.tests.guide.*"/>
+        </packages>
+    </test>
+
+</suite>
