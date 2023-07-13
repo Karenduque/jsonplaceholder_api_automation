@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.niikiis.NiikiisAPItesting</groupId>
-    <artifactId>niikiis_api_testing</artifactId>
+    <groupId>com.jsonplaceholder.APItesting</groupId>
+    <artifactId>jsonplaceholder_api_automation</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
         <allure-environment-writer.version>1.0.0</allure-environment-writer.version>
@@ -28,7 +28,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <restassured.version>5.1.0</restassured.version>
         <slf4j.version>2.0.0-alpha7</slf4j.version>
-        <suiteXmlFile>src/test/resources/suites/QA_NiikiisSuite.xml</suiteXmlFile>
+        <suiteXmlFile>src/test/resources/suites/QA_JonPlaceHolderSuite.xml</suiteXmlFile>
         <testng.version>7.6.0</testng.version>
     </properties>
 

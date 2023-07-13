@@ -78,6 +78,35 @@
 			"response": []
 		},
 		{
+			"name": "Wrong resource creation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Test jsonplaceholder Jeffry\",\n    \"body\": \"Prueba mal a propósito\", }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Update a resource",
 			"request": {
 				"method": "PUT",

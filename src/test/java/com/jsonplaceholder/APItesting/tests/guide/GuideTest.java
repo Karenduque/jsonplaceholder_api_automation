@@ -64,6 +64,32 @@ public class GuideTest extends AbstractBaseTest {
 
     @Test(groups = {TestGroups.SMOKE, TestGroups.GUIDE})
     @Severity(SeverityLevel.CRITICAL)
+    @Description("add a resource - wrong test")
+    @Parameters({"title", "body", "userId"})
+    public void postWrongAddResource(String title, String body, Integer userId, ITestContext context) {
+        Gson gson = new Gson();
+
+        Resource resource = new Resource();
+        resource.setTitle(title);
+        resource.setBody(body);
+        //resource.setUserId(userId);
+
+        String bodyRequest = gson.toJson(resource);
+        JsonObject bodyPayload = JsonParser.parseString(bodyRequest).getAsJsonObject();
+        Response response = given().spec(request)
+                .header("Content-type", "application/json; charset=UTF-8")
+                .body(bodyPayload.toString())
+                .post("");
+
+        response.then().assertThat()
+                .statusCode(HttpStatus.SC_INTERNAL_SERVER_ERROR)
+                .body(matchesJsonSchemaInClasspath("schemas/guide/Resources-schema.json"));
+    }
+
+
+
+    @Test(groups = {TestGroups.SMOKE, TestGroups.GUIDE})
+    @Severity(SeverityLevel.CRITICAL)
     @Description("Getting a resource by id- Happy Path")
     @Parameters({"resourceId"})
     public void getJobByOuId(String resourceId) {
